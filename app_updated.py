@@ -3,7 +3,7 @@ import pandas as pd
 import numpy as np
 import joblib
 
-# Load your trained model
+# Load all your trained model 
 model = joblib.load('C:\\Users\\KIIT\\Projects\\Parkinson-Desease-Prediction-Model-Using-Machine-Learning-main\\model.pkl')
 app = Flask(__name__)
 
