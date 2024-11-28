@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Parkinson's Disease Prediction Model</title>
+    <style>
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 50px auto;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        }
+
+        .hero-section {
+            background-color: black;
+            color: white;
+            padding: 40px 20px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .hero-section h1 {
+            font-size: 36px;
+            margin-bottom: 15px;
+        }
+
+        .hero-section p {
+            font-size: 18px;
+            margin-bottom: 0;
+        }
+
+        form {
+            margin-bottom: 30px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        .btn-primary {
+            background-color: #333;
+            color: white;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            display: inline-block;
+            text-align: center;
+        }
+
+        .btn-primary:hover {
+            background-color: #555;
+        }
+
+        .info-section {
+            margin-top: 40px;
+        }
+
+        .info-section h3 {
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        .info-section p {
+            font-size: 16px;
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+
+        .info-section ul {
+            padding-left: 20px;
+        }
+
+        .info-section ul li {
+            font-size: 16px;
+            margin-bottom: 10px;
+            list-style-type: disc;
+        }
+
+        footer {
+            margin-top: 40px;
+            text-align: center;
+            color: #777;
+            font-size: 14px;
+        }
+
+        .alert {
+            padding: 15px;
+            background-color: #e9ecef;
+            border-radius: 5px;
+            color: #333;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="hero-section">
+            <h1>Parkinson's Disease Prediction Model</h1>
+            <p>A Nervous System Disorder with Symptoms like Loss of Walking, Talking, and More.</p>
+        </div>
+
+        <form action="/predict" method="POST">
+            <div class="form-group">
+                <label for="email" class="form-label">Enter Parkinson's Symptoms:</label>
+                <input type="text" class="form-control" name="text" id="email" placeholder="Enter ">
+            </div>
+            <button type="submit" class="btn-primary">Submit</button>
+        </form>
+
+        {% if message %}
+        <div class="alert">
+            <p>{{ message }}</p>
+        </div>
+        {% endif %}
+
+        <div class="info-section">
+            <h3>About Parkinson's Disease</h3>
+            <p>Parkinson’s Disease is a progressive disorder of the nervous system that affects movement. It develops
+                gradually, sometimes starting with a barely noticeable tremor in just one hand. Tremors are common, but the
+                disorder also commonly causes stiffness or slowing of movement.</p>
+            <p>Parkinson's disease symptoms worsen as the condition progresses over time. Although Parkinson's disease
+                can't be cured, medications might significantly improve symptoms.</p>
+
+            <h3>Symptoms of Parkinson's Disease</h3>
+            <ul>
+                <li>Tremor, or shaking, usually begins in a limb, often your hand or fingers.</li>
+                <li>Slowed movement (bradykinesia) that makes everyday tasks difficult and time-consuming.</li>
+                <li>Rigid muscles, causing stiffness in any part of the body.</li>
+                <li>Impaired posture and balance leading to difficulty standing up straight.</li>
+                <li>Loss of automatic movements like blinking or smiling.</li>
+                <li>Speech and writing changes, making it hard to communicate clearly.</li>
+            </ul>
+        </div>
+
+        <footer>
+            <p>&copy; 2024 Parkinson's Disease Prediction Model. All Rights Reserved.</p>
+        </footer>
+    </div>
+
+</body>
+
+</html>

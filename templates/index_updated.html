@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Parkinson's Disease Prediction Model</title>
+    <style>
+      /* CSS styling */
+      body {
+        background-color: #f8f9fa;
+        color: #333;
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+
+      .container {
+        max-width: 900px;
+        margin: 50px auto;
+        background-color: #fff;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+      }
+
+      .hero-section {
+        background-color: black;
+        color: white;
+        padding: 40px 20px;
+        border-radius: 10px;
+        margin-bottom: 30px;
+        text-align: center;
+      }
+
+      .form-group {
+        margin-bottom: 15px;
+      }
+
+      .form-label {
+        font-weight: bold;
+        display: block;
+        margin-bottom: 5px;
+      }
+
+      .form-control {
+        width: 100%;
+        padding: 10px;
+        font-size: 16px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-sizing: border-box;
+      }
+
+      .btn-primary {
+        background-color: #333;
+        color: white;
+        padding: 10px 20px;
+        font-size: 16px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        display: inline-block;
+        text-align: center;
+      }
+
+      .btn-primary:hover {
+        background-color: #555;
+      }
+
+      .alert {
+        padding: 15px;
+        background-color: #e9ecef;
+        border-radius: 5px;
+        color: #333;
+        margin-top: 15px;
+        font-size: 16px;
+      }
+
+      .report-section {
+        margin-top: 40px;
+      }
+
+      .report-section h3 {
+        color: #333;
+        margin-bottom: 15px;
+      }
+
+      .report-section p,
+      .report-section ul li {
+        font-size: 16px;
+        line-height: 1.6;
+        color: #555;
+      }
+
+      footer {
+        margin-top: 40px;
+        text-align: center;
+        color: #777;
+        font-size: 14px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="hero-section">
+        <h1>Parkinson's Disease Prediction Model</h1>
+        <p>
+          Assess symptoms and get personalized insights for Parkinson's disease
+          prevention or treatment.
+        </p>
+      </div>
+
+      <div class="report-section">
+        <h3>About Parkinson's Disease</h3>
+        <p>
+          Parkinson's disease is a progressive disorder that affects the nervous
+          system and movement. Symptoms often start gradually and worsen over
+          time, impacting daily activities.
+        </p>
+        <h4>Common Symptoms</h4>
+        <ul>
+          <li>Tremors or shaking</li>
+          <li>Slowed movement (bradykinesia)</li>
+          <li>Muscle stiffness and rigidity</li>
+          <li>Impaired posture and balance</li>
+          <li>Loss of automatic movements (e.g., blinking)</li>
+          <li>Changes in speech and facial expressions</li>
+          <li>Difficulty swallowing</li>
+          <li>Reduced facial expressions or masked face</li>
+        </ul>
+        <h4>Risk Factors</h4>
+        <ul>
+          <li>Age (higher risk for older adults)</li>
+          <li>Genetics</li>
+          <li>Environmental factors, such as exposure to toxins</li>
+        </ul>
+        <h4>Prevention</h4>
+        <p>
+          While Parkinson's disease cannot be entirely prevented, maintaining a
+          healthy lifestyle, exercising regularly, and reducing exposure to
+          toxins may help reduce risk.
+        </p>
+      </div>
+      <form action="/predict" method="POST" enctype="multipart/form-data">
+        <div class="form-group">
+          <label for="frequencies" class="form-label"
+            >Enter Frequencies (comma-separated):</label
+          >
+          <input
+            type="text"
+            name="frequencies"
+            class="form-control"
+            placeholder="e.g., 123.4, 456.7, 789.0"
+          />
+        </div>
+        <div class="form-group">
+          <label for="file-upload" class="form-label"
+            >Or Upload Frequencies File:</label
+          >
+          <input type="file" name="file-upload" class="form-control" />
+        </div>
+        <div class="form-group">
+          <label class="form-label">Select Parkinson's Symptoms:</label>
+          <div>
+            <input type="checkbox" name="symptoms" value="tremor" />
+            Tremor<br />
+            <input type="checkbox" name="symptoms" value="bradykinesia" />
+            Slowed Movement (Bradykinesia)<br />
+            <input type="checkbox" name="symptoms" value="rigid_muscles" />
+            Rigid Muscles<br />
+            <input type="checkbox" name="symptoms" value="impaired_posture" />
+            Impaired Posture and Balance<br />
+            <input
+              type="checkbox"
+              name="symptoms"
+              value="loss_of_automatic_movements"
+            />
+            Loss of Automatic Movements<br />
+            <input type="checkbox" name="symptoms" value="speech_changes" />
+            Speech and Writing Changes<br />
+            <input
+              type="checkbox"
+              name="symptoms"
+              value="overall_neurological_impact"
+            />
+            Overall Neurological Impact<br />
+            <input
+              type="checkbox"
+              name="symptoms"
+              value="difficulty_swallowing"
+            />
+            Difficulty Swallowing<br />
+            <input
+              type="checkbox"
+              name="symptoms"
+              value="reduced_facial_expressions"
+            />
+            Reduced Facial Expressions (Masked Face)<br />
+          </div>
+        </div>
+        <button type="submit" class="btn-primary">Predict</button>
+      </form>
+
+      {% if message %}
+      <div class="alert">
+        <p>{{ message }}</p>
+        {% if doctors %}
+        <h4>Recommended Doctors:</h4>
+        <ul>
+          {% for doctor in doctors %}
+          <li>{{ doctor }}</li>
+          {% endfor %}
+        </ul>
+        <h4>Treatment Methods:</h4>
+        <ul>
+          {% for treatment in treatments %}
+          <li>{{ treatment }}</li>
+          {% endfor %}
+        </ul>
+        {% elif preventions %}
+        <h4>Preventive Measures:</h4>
+        <ul>
+          {% for prevention in preventions %}
+          <li>{{ prevention }}</li>
+          {% endfor %}
+        </ul>
+        {% endif %}
+      </div>
+      {% endif %}
+
+      <footer>
+        <p>
+          &copy; 2024 Parkinson's Disease Prediction Model. All Rights Reserved.
+        </p>
+      </footer>
+    </div>
+  </body>
+</html>
