@@ -13,7 +13,6 @@ This project leverages machine learning algorithms to predict the likelihood of 
 ## Key Features
 - **Data Preprocessing**: Includes techniques for handling imbalanced datasets using upsampling.
 - **Model Comparison**: Compares the performance of models such as Random Forest, SVM, KNN, and others on both original and balanced datasets.
-- **Generative AI Integration**: Discusses the potential for using Generative AI to enhance healthcare predictions and assist users.
 - **Performance Metrics**: Provides detailed accuracy scores, classification reports, and other metrics for each model.
 
 ## Project Structure
