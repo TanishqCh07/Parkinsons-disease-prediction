@@ -31,11 +31,8 @@ The project is organized into the following sections:
      - Best accuracy (Initial Dataset): **KNN - 92.3%**  
      - Best accuracy (Balanced Dataset): **Random Forest - 94.4%**
 
-3. **Integration of Generative AI**  
-   - Discussing applications for assisting healthcare practitioners.  
-   - Insights into using prompt engineering for explaining model predictions.
 
-4. **Graphs and Visualizations**  
+3. **Graphs and Visualizations**  
    - Accuracy comparison graphs for different models.  
    - Workflow diagram for data preprocessing and model evaluation.  
    - Feature importance visualization (for Random Forest).
