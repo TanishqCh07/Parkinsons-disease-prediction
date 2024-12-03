@@ -2,7 +2,7 @@
 
 
 ## Overview
-This project leverages machine learning algorithms to predict the likelihood of Parkinson's disease based on various biomedical voice measurements. Additionally, it incorporates Generative AI and Prompt Engineering concepts for enhanced understanding and integration into real-world applications.
+This project leverages machine learning algorithms to predict the likelihood of Parkinson's disease based on various biomedical voice measurements. 
 
 ## Objectives
 - To build a machine learning model for predicting Parkinson's disease.
