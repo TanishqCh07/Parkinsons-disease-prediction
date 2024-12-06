@@ -1,6 +1,6 @@
 # Parkinson-Desease-Prediction-Model-Using-Machine-Learning
 
-
+  
 ## Overview
 This project leverages machine learning algorithms to predict the likelihood of Parkinson's disease based on various biomedical voice measurements. 
 
