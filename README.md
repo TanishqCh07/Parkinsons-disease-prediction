@@ -5,7 +5,7 @@
 This project leverages machine learning algorithms to predict the likelihood of Parkinson's disease based on various biomedical voice measurements. 
  
 ## Objectives
-- To build a machine learning model for predicting Parkinson's disease.                  
+- To build a machine learning model for predicting Parkinson's disease.                   
 - To evaluate the performance of different algorithms on the dataset.
 - To explore data balancing techniques for improved model accuracy.            
 - To integrate insights from Generative AI and Prompt Engineering for better usability and interface design.
